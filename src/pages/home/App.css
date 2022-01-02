@@ -1,0 +1,253 @@
+header {
+  background: linear-gradient(180deg, rgba(92, 72, 72, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url('../../assets/img/fitness-lg.jpg') center/cover no-repeat;
+}
+
+header button#start-exercises {
+  margin-top: 25px;
+}
+
+/* Planning */
+#planning table {
+  border-collapse: collapse;
+  margin: 15px 0 20px;
+}
+
+#planning h2 {
+  margin-top: 15px;
+}
+
+#planning table tr {
+  border: 1px solid rgb(236, 236, 236);
+}
+
+#planning table tr:nth-child(2n+1) {
+  background-color: rgb(245, 245, 245);
+}
+
+#planning table th,
+#planning table td {
+  text-align: left;
+  padding: 8px 12px;
+}
+
+#planning table button {
+  border-radius: 6px;
+  border: none;
+  background-color: rgb(241, 205, 0);
+  padding: 5px 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Exercises */
+#exercises-list {
+  width: 60%;
+  margin: 0 auto;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+.exercise {
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  margin-top: 25px;
+}
+
+.exercise .image-only {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.exercise img:not(.image-only) {
+  width: 210px;
+}
+
+.exercise img {
+  align-self: flex-start;
+}
+
+.exercise .content {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.exercise-summary {
+  margin: 12px 0 10px;
+}
+
+.exercise-title {
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.sets-and-reps {
+  margin: 0;
+}
+
+select {
+  font-size: 1.1rem;
+  padding: 4px 6px;
+  border: 1px solid #e9e9e9;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+/* Training window */
+#training {
+  display: flex;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+  overflow: auto;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px 15px 30px;
+}
+
+#close {
+  position: fixed;
+  top: 15px;
+  right: 30px;
+  cursor: pointer;
+}
+
+#close span {
+  font-size: 3rem;
+}
+
+#close img {
+  width: 30px;
+}
+
+#training .warning {
+  display: flex;
+  align-items: center;
+}
+
+#training .warning img {
+  max-width: 70px;
+  max-height: 100px;
+}
+
+#training .warning p {
+  margin-left: 25px;
+  font-size: 1.1rem;
+}
+
+#training .warning:last-child {
+  margin-top: 35px;
+}
+
+#training-exercises {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+#training h2:not(:nth-child(2)) {
+  margin: 25px 0 8px;
+}
+
+#training ul {
+  padding: 0;
+}
+
+#sources ul, #links ul {
+  word-break: break-all;
+}
+
+@media all and (min-width: 1350px) {
+  .exercise img:not(.image-only) {
+      width: 300px;
+  }
+}
+
+@media all and (max-width: 978px) {
+  #exercises-list,
+  #training-exercises {
+      width: 70%;
+  }
+}
+
+@media all and (max-width: 834px) {
+  #exercises-list,
+  #training-exercises {
+      width: 80%;
+  }
+}
+
+@media all and (max-width: 700px) {
+  #exercises-list,
+  #training-exercises {
+      width: 90%;
+  }
+
+  .exercise .image-only {
+      width: 60%;
+  }
+}
+
+@media all and (max-width: 650px) {
+  #exercises-list,
+  #training-exercises {
+      width: 100%;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .exercise {
+      flex-direction: column;
+  }
+
+  .exercise .content {
+      margin-left: 0;
+      justify-content: flex-start;
+      margin-top: 6px;
+  }
+
+  .exercise-summary {
+      margin: 8px 0 8px;
+  }
+
+  .exercise img:not(.image-only) {
+      max-width: 100%;
+      width: 100%;
+  }
+
+  .exercise .image-only {
+      width: 70%;
+  }
+
+  #sources ul, #links ul {
+      max-width: 100%;
+      padding-left: 15px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  table td,
+  table th {
+      display: block;
+  }
+
+  #planning table th {
+      padding-bottom: 0;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .exercise .image-only {
+      width: 90%;
+  }
+}

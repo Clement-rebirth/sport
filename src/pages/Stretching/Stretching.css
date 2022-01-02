@@ -1,0 +1,83 @@
+.stretching header {
+    background: linear-gradient(180deg, rgba(92, 72, 72, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url('../../assets/img/man-stretching.jpg') center/cover no-repeat;
+}
+
+.stretching section {
+    width: 70%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.stretching-exercise {
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    margin-top: 35px;
+}
+
+.stretching-exercise h3 {
+    margin-top: 0;
+}
+
+.stretching-exercise img {
+    width: 35%;
+    max-width: 380px;
+    max-height: 150px;
+    min-width: 210px;
+    align-self: flex-start;
+}
+
+.stretching-exercise .content {
+    margin-left: 15px;
+}
+
+@media all and (max-width: 750px) {
+    .stretching section {
+        width: 75%;
+    }
+}
+
+@media all and (max-width: 650px) {
+    .stretching section {
+        width: 85%;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .stretching-exercise {
+        flex-direction: column;
+    }
+
+    .stretching-exercise .content {
+        margin-left: 0;
+        justify-content: flex-start;
+        margin-top: 6px;
+    }
+
+    .stretching-exercise p {
+        margin: 8px 0 8px;
+    }
+
+    .stretching-exercise img {
+        max-height: initial;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .stretching section {
+        width: 90%;
+        padding: 0 20px;
+    }
+
+    .stretching section.text ul {
+        padding-left: 15px;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .stretching section {
+        width: 100%;
+    }
+}

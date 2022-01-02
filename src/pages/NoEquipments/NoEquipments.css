@@ -1,0 +1,53 @@
+.no-equipments header {
+    background: linear-gradient(180deg, rgba(92, 72, 72, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url('../../assets/img/man-working-out.jpg') center/cover no-repeat;
+}
+
+#no-equipments {
+    width: 70%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#no-equipments {
+    padding-bottom: 25px;
+}
+
+#no-equipments ul {
+    padding-left: 15px;
+}
+
+#no-equipments a {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(241, 205, 0, 0.8);
+}
+
+@media all and (max-width: 750px) {
+    #no-equipments {
+        width: 75%;
+    }
+}
+
+@media all and (max-width: 650px) {
+    #no-equipments {
+        width: 85%;
+    }
+}
+
+@media all and (max-width: 500px) {
+    #no-equipments {
+        width: 90%;
+        padding: 0 20px;
+    }
+
+    #no-equipments.text ul {
+        padding-left: 15px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    #no-equipments {
+        width: 100%;
+    }
+}

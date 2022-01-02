@@ -1,0 +1,28 @@
+#menu {
+  background-color: rgb(20, 20, 20);
+  padding: 8px 0;
+}
+
+#menu nav {
+  margin: 0 auto;
+  width: 70%;
+  max-width: 450px;
+}
+
+#menu ul {  
+  padding-left: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#menu li {
+  list-style: none;
+}
+
+#menu a {
+  display: block;
+  text-decoration: none;
+  margin: 6px;
+  color: #fff;
+}

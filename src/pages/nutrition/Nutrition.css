@@ -1,0 +1,77 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.nutrition header {
+    background: linear-gradient(180deg, rgba(92, 72, 72, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), url('../../assets/img/healthy-food.jpg') center/cover no-repeat;
+}
+
+.nutrition section {
+    width: 70%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+#sources ul,
+#links ul {
+    max-width: 100%;
+    padding-left: 15px;
+    margin: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+#calculator form input {
+    font-size: 1.2rem;
+    margin: 0 0 20px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #000;
+    transition-duration: 0.3s;
+}
+
+#calculator form label {
+    font-size: 1.2rem;
+}
+
+#calculator form input:focus {
+    border-bottom: 1px solid rgba(241, 205, 0, 0.9);
+}
+
+#go-to-calculate {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+#results ul {
+    display: inline-block;
+}
+
+#results ul li {
+    text-align: left;
+}
+
+@media all and (max-width: 750px) {
+    .nutrition section {
+        width: 75%;
+    }
+}
+
+@media all and (max-width: 650px) {
+    .nutrition section {
+        width: 85%;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .nutrition section {
+        width: 90%;
+        padding: 0 20px;
+    }
+
+    .nutrition section.text ul {
+        padding-left: 15px;
+    }
+}
