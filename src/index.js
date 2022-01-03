@@ -8,24 +8,30 @@ import Menu from './components/Menu/Menu';
 import Nutrition from './pages/nutrition/Nutrition';
 import NoEquipments from './pages/NoEquipments/NoEquipments';
 import Stretching from './pages/Stretching/Stretching';
+import Footer from './components/Footer/Footer';
+import UserProvider from './providers/UserProvider';
+import Login from './pages/Login/Login';
 
 import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Menu />
+    <UserProvider>
+      <Router>
+        <Menu />
 
-      <Routes>
-        <Route exact path='/' element={<App />} />
-        <Route exact path='/nutrition' element={<Nutrition />} />
-        <Route path='/no-equipments' element={<NoEquipments />} />
-        <Route path='/stretching' element={<Stretching />} />
+        <Routes>
+          <Route exact path='/' element={<App />} />
+          <Route exact path='/nutrition' element={<Nutrition />} />
+          <Route path='/no-equipments' element={<NoEquipments />} />
+          <Route path='/stretching' element={<Stretching />} />
+          <Route path='/admin' element={<Login />} />
 
-      </Routes>
-      
-      <footer>Ce site a été créé à but uniquement personnel.</footer>
-    </Router>
+        </Routes>
+        
+        <Footer />
+      </Router>
+    </UserProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

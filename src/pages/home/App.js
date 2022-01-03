@@ -106,8 +106,8 @@ function App() {
       }
 
       <section id="planning">
-          <h2><span>Planning</span></h2>
-          <Planning startTraining={startTraining} />
+        <h2><span>Planning</span></h2>
+        <Planning startTraining={startTraining} />
       </section>  
 
       <hr className="separator" />
@@ -116,17 +116,17 @@ function App() {
           <h2><span>Exercices</span></h2>
 
           <label htmlFor="category">Choisissez une catégorie :</label>
-              <select name="category" id="category" onChange={handleChange}>
-                  <option value="none">Aucune</option>
-                  <option value="thighs">Cuisses</option>
-                  <option value="calves">Mollets</option>
-                  <option value="biceps">Biceps</option>
-                  <option value="triceps">Triceps</option>
-                  <option value="abs">Abdos</option>
-                  <option value="pecs">Pecs</option>
-                  <option value="back">Dos</option>
-                  <option value="shoulders">Épaules</option>
-              </select>
+          <select name="category" id="category" onChange={handleChange}>
+            <option value="none">Aucune</option>
+            <option value="thighs">Cuisses</option>
+            <option value="calves">Mollets</option>
+            <option value="biceps">Biceps</option>
+            <option value="triceps">Triceps</option>
+            <option value="abs">Abdos</option>
+            <option value="pecs">Pecs</option>
+            <option value="back">Dos</option>
+            <option value="shoulders">Épaules</option>
+          </select>
 
           <div id="exercises-list">
             { exercisesToShow !== 'loading' &&
@@ -149,13 +149,13 @@ function App() {
       <hr className="separator" />
 
       <section id="sources">
-          <h2><span>Sources</span></h2>
+        <h2><span>Sources</span></h2>
 
-          <ul>
-              <li><a rel="noopener noreferrer nofollow" target="_blank" href="https://www.musculation-halteres.fr/">https://www.musculation-halteres.fr/</a></li>
-              <li><a rel="noopener noreferrer nofollow" target="_blank" href="https://darebee.com/">https://darebee.com/</a></li>
-              <li><a rel="noopener noreferrer nofollow" target="_blank" href="https://fr.myprotein.com/thezone/entrainement/meilleurs-exercices-biceps-triceps-prendre-de-la-masse/">https://fr.myprotein.com/thezone/entrainement/meilleurs-exercices-biceps-triceps-prendre-de-la-masse/</a></li>
-          </ul>
+        <ul>
+          <li><a rel="noopener noreferrer nofollow" target="_blank" href="https://www.musculation-halteres.fr/">https://www.musculation-halteres.fr/</a></li>
+          <li><a rel="noopener noreferrer nofollow" target="_blank" href="https://darebee.com/">https://darebee.com/</a></li>
+          <li><a rel="noopener noreferrer nofollow" target="_blank" href="https://fr.myprotein.com/thezone/entrainement/meilleurs-exercices-biceps-triceps-prendre-de-la-masse/">https://fr.myprotein.com/thezone/entrainement/meilleurs-exercices-biceps-triceps-prendre-de-la-masse/</a></li>
+        </ul>
       </section>
     </div>
   );

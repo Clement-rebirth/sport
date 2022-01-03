@@ -1,0 +1,42 @@
+.login h1 {
+  color: #000;
+  text-align: left;
+  padding: 0;
+}
+
+.login .form-container {
+  width: 20%;
+  min-width: 330px;
+  margin: 35px auto 0;
+  box-sizing: border-box;
+}
+
+.login form label {
+  font-size: 1.1rem;
+  display: block;
+  margin: 12px 0 3px;
+}
+
+.login form input {
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.login form button {
+  width: 100%;
+  margin-top: 12px;
+}
+
+@media all and (max-width: 410px) {
+  .login .form-container {
+    padding: 15px;
+    width: 100%;
+    min-width: auto;
+  }
+}

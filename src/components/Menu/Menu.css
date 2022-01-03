@@ -3,7 +3,7 @@
   padding: 8px 0;
 }
 
-#menu nav {
+.desktop-menu {
   margin: 0 auto;
   width: 70%;
   max-width: 450px;
@@ -25,4 +25,45 @@
   text-decoration: none;
   margin: 6px;
   color: #fff;
+}
+
+#menu .open-menu {
+  display: none;
+  color: #fff;
+  align-items: center;
+  margin-left: 10px;
+}
+
+#menu .open-menu span {
+  font-size: 2rem;
+}
+
+.mobile-menu {
+  display: none;
+  margin: 0 0 0 8px;
+  width: auto;
+  max-width: auto;
+}
+
+.mobile-menu ul {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media all and (max-width: 600px) {
+  #menu .open-menu {
+    display: flex;
+  }
+
+  .desktop-menu {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
 }
