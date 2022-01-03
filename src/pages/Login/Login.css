@@ -17,7 +17,7 @@
   margin: 12px 0 3px;
 }
 
-.login form input {
+.login .form-container form input {
   padding: 8px 10px;
   border-radius: 8px;
   margin-bottom: 18px;

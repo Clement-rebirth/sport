@@ -1,9 +1,12 @@
 import TrainingOverlay from './TrainingOverlay';
 import Planning from './Planning';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Manager from '../../services/firebase/Manager';
+import { UserContext } from '../../providers/UserProvider';
+import { off } from 'firebase/database';
 
 import Exercise from './Exercise';
+import { Link } from 'react-router-dom';
 
 import './App.css';
 
@@ -13,7 +16,9 @@ function App() {
   const [exercisesToShow, setExercisesToShow] = useState('loading');
   const [showTraining, setShowTraining] = useState(false);
   const [currentDayNumber, setCurrentDayNumber] = useState(false);
-  const [trainingExercises, setTrainingExercises] = useState(false)
+  const [trainingExercises, setTrainingExercises] = useState(false);
+
+  let { user } = useContext(UserContext);
 
   useEffect(() => {
     let date = new Date();
@@ -31,6 +36,8 @@ function App() {
       let data = snapshot.val();
       setExercises(data);
     });
+
+    return () => off(exercisesManager.ref);
   }, []);
 
   useEffect(() => {
@@ -113,37 +120,43 @@ function App() {
       <hr className="separator" />
 
       <section id="exercises">
+        <div className='wrap'>
           <h2><span>Exercices</span></h2>
 
-          <label htmlFor="category">Choisissez une catégorie :</label>
-          <select name="category" id="category" onChange={handleChange}>
-            <option value="none">Aucune</option>
-            <option value="thighs">Cuisses</option>
-            <option value="calves">Mollets</option>
-            <option value="biceps">Biceps</option>
-            <option value="triceps">Triceps</option>
-            <option value="abs">Abdos</option>
-            <option value="pecs">Pecs</option>
-            <option value="back">Dos</option>
-            <option value="shoulders">Épaules</option>
-          </select>
+          { user &&
+            <Link to='/add-exercise'><span className="icon material-icons-round">add</span></Link>
+          }
+        </div>
 
-          <div id="exercises-list">
-            { exercisesToShow !== 'loading' &&
-              Object.keys(exercisesToShow).map(id => (
-                <Exercise
-                  key={id}
-                  link={exercisesToShow[id].link}
-                  image={exercisesToShow[id].image}
-                  title={exercisesToShow[id].title}
-                  summary={exercisesToShow[id].summary}
-                  set={exercisesToShow[id].set}
-                  reps={exercisesToShow[id].reps}
-                  time={exercisesToShow[id].time}
-                />
-              ))
-            }
-          </div>
+        <label htmlFor="category">Choisissez une catégorie :</label>
+        <select name="category" id="category" onChange={handleChange}>
+          <option value="none">Aucune</option>
+          <option value="thighs">Cuisses</option>
+          <option value="calves">Mollets</option>
+          <option value="biceps">Biceps</option>
+          <option value="triceps">Triceps</option>
+          <option value="abs">Abdos</option>
+          <option value="pecs">Pecs</option>
+          <option value="back">Dos</option>
+          <option value="shoulders">Épaules</option>
+        </select>
+
+        <div id="exercises-list">
+          { exercisesToShow !== 'loading' &&
+            Object.keys(exercisesToShow).map(id => (
+              <Exercise
+                key={id}
+                link={exercisesToShow[id].link}
+                image={exercisesToShow[id].image}
+                title={exercisesToShow[id].title}
+                summary={exercisesToShow[id].summary}
+                set={exercisesToShow[id].set}
+                reps={exercisesToShow[id].reps}
+                time={exercisesToShow[id].time}
+              />
+            ))
+          }
+        </div>
       </section>
 
       <hr className="separator" />

@@ -11,6 +11,7 @@ import Stretching from './pages/Stretching/Stretching';
 import Footer from './components/Footer/Footer';
 import UserProvider from './providers/UserProvider';
 import Login from './pages/Login/Login';
+import AddExercise from './pages/AddExercise/AddExercise';
 
 import './index.css';
 
@@ -22,11 +23,11 @@ ReactDOM.render(
 
         <Routes>
           <Route exact path='/' element={<App />} />
-          <Route exact path='/nutrition' element={<Nutrition />} />
+          <Route path='/nutrition' element={<Nutrition />} />
           <Route path='/no-equipments' element={<NoEquipments />} />
           <Route path='/stretching' element={<Stretching />} />
           <Route path='/admin' element={<Login />} />
-
+          <Route path='/add-exercise' element={<AddExercise />} />
         </Routes>
         
         <Footer />

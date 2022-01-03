@@ -97,6 +97,27 @@ select {
   margin-top: 10px;
 }
 
+.wrap {
+  display: flex;
+  align-items: center;
+}
+
+.wrap a {
+  cursor: pointer;
+  margin-bottom: 8px;
+  color: #000;
+  background-color: rgb(241, 205, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.wrap .icon {
+  font-size: 1.7rem;
+}
+
 /* Training window */
 #training {
   display: flex;

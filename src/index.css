@@ -13,7 +13,7 @@ html {
     flex-direction: column;
 }
 
-body, label, button, input {
+body, label, button, input, textarea {
     font-family: 'Open Sans', sans-serif;
 }
 
