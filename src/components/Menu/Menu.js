@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import './Menu.css';
 
@@ -8,9 +8,16 @@ const Menu = () => {
 
   const [showMenu, setShowMenu] = useState(false);
 
+  const location = useLocation();
   const menuNav = useRef(null);
 
+  useEffect(() => {
+    closeMenu();
+  }, [location]);
+
   const toggleMenu = () => setShowMenu(!showMenu);
+
+  const closeMenu = () => setShowMenu(false);
 
   return (
     <div id="menu">

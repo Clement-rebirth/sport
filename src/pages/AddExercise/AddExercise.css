@@ -17,6 +17,7 @@
   margin: 0 auto;
   max-width: 800px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 form button,
@@ -57,4 +58,25 @@ input[type="checkbox"] + label {
 
 .image-preview img {
   max-width: 100%;
+}
+
+@media all and (max-width: 500px) {
+  .add-exercise,
+  .edit-exercise {
+    padding: 25px 35px 25px;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .add-exercise h1, 
+  .edit-exercise h1 {
+    font-size: 2.1rem;
+  }
+}
+
+@media all and (max-width: 400px) {
+  .add-exercise,
+  .edit-exercise {
+    padding: 25px;
+  }
 }
