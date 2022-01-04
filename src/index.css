@@ -171,6 +171,16 @@ footer .admin a {
     cursor: pointer;
 }
 
+footer .sign-out {
+    color: #000;
+    background-color: transparent;
+    border: none;
+    margin-right: 12px;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 @media all and (max-width: 700px) {
     #sources ul, #links ul {
         max-width: 80%;

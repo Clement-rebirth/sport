@@ -143,16 +143,11 @@ function App() {
 
         <div id="exercises-list">
           { exercisesToShow !== 'loading' &&
-            Object.keys(exercisesToShow).map(id => (
+            Object.keys(exercisesToShow).map(key => (
               <Exercise
-                key={id}
-                link={exercisesToShow[id].link}
-                image={exercisesToShow[id].image}
-                title={exercisesToShow[id].title}
-                summary={exercisesToShow[id].summary}
-                set={exercisesToShow[id].set}
-                reps={exercisesToShow[id].reps}
-                time={exercisesToShow[id].time}
+                key={key}
+                exercise={{ ...exercisesToShow[key], id: key }}
+                user={user}
               />
             ))
           }

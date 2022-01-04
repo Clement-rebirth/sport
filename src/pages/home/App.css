@@ -83,6 +83,33 @@ header button#start-exercises {
 .exercise-title {
   font-size: 1.7rem;
   margin: 0;
+  display: flex;
+}
+
+.exercise-actions {
+  margin-left: 15px;
+  display: flex;
+}
+
+.exercise-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#edit-exercise {
+  margin-right: 10px;
+  color: #3498db;
+  background-color: rgba(52,152,219,.15);
+}
+
+#delete-exercise {
+  color: #e74c3c;
+  background-color: rgba(231,76,60,.15);
 }
 
 .sets-and-reps {
