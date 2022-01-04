@@ -35,16 +35,11 @@ const TrainingOverlay = ({ closeTraining, trainingExercises }) => {
 
       <div id="training-exercises">
       { trainingExercises &&
-        Object.keys(trainingExercises).map(id => (
+        Object.keys(trainingExercises).map(key => (
           <Exercise
-            key={id}
-            link={trainingExercises[id].link}
-            image={trainingExercises[id].image}
-            title={trainingExercises[id].title}
-            summary={trainingExercises[id].summary}
-            set={trainingExercises[id].set}
-            reps={trainingExercises[id].reps}
-            time={trainingExercises[id].time}
+            key={key}
+            exercise={{ ...trainingExercises[key], id: key }}
+            user={false}
           />
         ))
       }

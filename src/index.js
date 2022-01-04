@@ -12,6 +12,7 @@ import Footer from './components/Footer/Footer';
 import UserProvider from './providers/UserProvider';
 import Login from './pages/Login/Login';
 import AddExercise from './pages/AddExercise/AddExercise';
+import EditExercise from './pages/EditExercise/EditExercise';
 
 import './index.css';
 
@@ -28,6 +29,7 @@ ReactDOM.render(
           <Route path='/stretching' element={<Stretching />} />
           <Route path='/admin' element={<Login />} />
           <Route path='/add-exercise' element={<AddExercise />} />
+          <Route path='/edit/:id' element={<EditExercise />} />
         </Routes>
         
         <Footer />
