@@ -9,7 +9,6 @@ const Menu = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const location = useLocation();
-  const menuNav = useRef(null);
 
   useEffect(() => {
     closeMenu();

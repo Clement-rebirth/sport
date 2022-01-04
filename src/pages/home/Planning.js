@@ -1,8 +1,15 @@
-import React, { useEffect } from 'react';
+import { off } from 'firebase/database';
+import React, { useEffect, useState } from 'react';
+import Manager from '../../services/firebase/Manager';
 
 const Training = ({ startTraining }) => {
 
+  const [planning, setPlanning] = useState('loading');
+
   useEffect(() => {
+
+    if (planning === 'loading') return;
+
     // Planning
     let date = new Date();
     let dayNumber = date.getDay(); // 0 to 6
@@ -11,44 +18,59 @@ const Training = ({ startTraining }) => {
 
     let currentDayTr = document.querySelectorAll('#planning table tr')[dayNumber];
     currentDayTr.style.backgroundColor = 'rgb(230, 230, 230)';
+  }, [planning]);
+
+  useEffect(() => {
+    let planningManager = new Manager('planning');
+
+    planningManager.getAll(snapshot => {
+      let data = snapshot.val();
+      setPlanning(data);
+    });
+
+    return () => off(planningManager.ref);
   }, []);
+
+  if (planning === 'loading') {
+    return <div className='loading'>Loading...</div>;
+  }
 
   return (
     <table>
       <tbody>
-        <tr data-exercises="back,biceps,triceps,abs" data-day-number="0">
+        <tr data-exercises={planning[0].categories}>
             <th>Lundi</th>
-            <td>dos/bras/abdos</td>
+            <td>{planning[0].translation}</td>
             <td><button onClick={() => startTraining(0)}>Start</button></td>
         </tr>
-        <tr data-exercises="thighs,calves,pecs,shoulders" data-day-number="1">
+        <tr data-exercises={planning[1].categories}>
             <th>Mardi</th>
-            <td>jambes/pecs/épaules</td>
+            <td>{planning[1].translation}</td>
             <td><button onClick={() => startTraining(1)}>Start</button></td>
         </tr>
-        <tr data-exercises="cardio" data-day-number="2">
+        <tr data-exercises={planning[2].categories}>
             <th>Mercredi</th>
-            <td>cardio</td>
+            <td>{planning[2].translation}</td>
             <td><button onClick={() => startTraining(2)}>Start</button></td>
         </tr>
-        <tr data-exercises="back,biceps,triceps,abs" data-day-number="3">
+        <tr data-exercises={planning[3].categories}>
             <th>Jeudi</th>
-            <td>dos/bras/abdos</td>
+            <td>{planning[3].translation}</td>
             <td><button onClick={() => startTraining(3)}>Start</button></td>
         </tr>
-        <tr data-exercises="thighs,calves,pecs,shoulders" data-day-number="4">
+        <tr data-exercises={planning[4].categories}>
             <th>Vendredi</th>
-            <td>jambes/pecs/épaules</td>
+            <td>{planning[4].translation}</td>
             <td><button onClick={() => startTraining(4)}>Start</button></td>
         </tr>
-        <tr data-exercises="cardio" data-day-number="5">
+        <tr data-exercises={planning[5].categories}>
             <th>Samedi</th>
-            <td>cardio</td>
+            <td>{planning[5].translation}</td>
             <td><button onClick={() => startTraining(5)}>Start</button></td>
         </tr>
-        <tr data-exercises="rest" data-day-number="6">
+        <tr data-exercises={planning[6].categories}>
             <th>Dimanche</th>
-            <td>repos</td>
+            <td>{planning[6].translation}</td>
             <td></td>
         </tr>
       </tbody>
