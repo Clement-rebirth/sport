@@ -70,7 +70,12 @@ function App() {
     let exercisesToDo = [];
 
     exercisesCategories.forEach(exercisesCategory => {
-      let matchingExercises = exercises.filter(exercise => exercise.category === exercisesCategory);
+      let matchingExercises = [];
+      
+      Object
+        .keys(exercises)
+        .filter(key => exercises[key].category === exercisesCategory)
+        .forEach(key => matchingExercises.push(exercises[key]));
       exercisesToDo = [...exercisesToDo, ...matchingExercises];
     });
 
