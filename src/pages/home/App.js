@@ -17,8 +17,15 @@ function App() {
   const [showTraining, setShowTraining] = useState(false);
   const [currentDayNumber, setCurrentDayNumber] = useState(false);
   const [trainingExercises, setTrainingExercises] = useState(false);
+  const [links, setLinks] = useState('loading');
 
   let { user } = useContext(UserContext);
+
+  useEffect(() => {
+    let linksManager = new Manager('links');
+
+    linksManager.getAllOnce(snapshot => setLinks(snapshot.val()));
+  }, []);
 
   useEffect(() => {
     let date = new Date();
@@ -88,7 +95,7 @@ function App() {
       alert("Pas d'entraînement aujourd'hui, repose toi !");
     } else if (todayIsCardio) {
       // alert("Aujourd'hui c'est cardio !");
-      window.open('https://www.youtube.com/watch?v=Zpv4-o9Hcw0');
+      window.open(links.cardio);
     } else if (window.confirm("Êtes-vous sûr de vouloir lancer l'entraînement ?")) {
       openTraining();
     }
