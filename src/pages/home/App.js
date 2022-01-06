@@ -93,10 +93,10 @@ function App() {
 
     if (todayIsRest) {
       alert("Pas d'entraînement aujourd'hui, repose toi !");
-    } else if (todayIsCardio) {
-      // alert("Aujourd'hui c'est cardio !");
-      window.open(links.cardio);
-    } else if (window.confirm("Êtes-vous sûr de vouloir lancer l'entraînement ?")) {
+      return;
+    }
+
+    if (window.confirm("Êtes-vous sûr de vouloir lancer l'entraînement ?")) {
       openTraining();
     }
   };
@@ -151,6 +151,7 @@ function App() {
           <option value="pecs">Pecs</option>
           <option value="back">Dos</option>
           <option value="shoulders">Épaules</option>
+          <option value="cardio">Cardio</option>
         </select>
 
         <div id="exercises-list">

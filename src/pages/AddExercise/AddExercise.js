@@ -90,6 +90,7 @@ const AddExercise = () => {
             <option value="pecs">Pecs</option>
             <option value="back">Dos</option>
             <option value="shoulders">Épaules</option>
+            <option value="cardio">Cardio</option>
           </select>
         </div>
 
