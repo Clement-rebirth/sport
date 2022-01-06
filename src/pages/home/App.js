@@ -17,15 +17,8 @@ function App() {
   const [showTraining, setShowTraining] = useState(false);
   const [currentDayNumber, setCurrentDayNumber] = useState(false);
   const [trainingExercises, setTrainingExercises] = useState(false);
-  const [links, setLinks] = useState('loading');
 
   let { user } = useContext(UserContext);
-
-  useEffect(() => {
-    let linksManager = new Manager('links');
-
-    linksManager.getAllOnce(snapshot => setLinks(snapshot.val()));
-  }, []);
 
   useEffect(() => {
     let date = new Date();
