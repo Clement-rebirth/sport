@@ -34,7 +34,7 @@ const AddExercise = () => {
   };
 
   const handleTime = e => {
-    setExerciseFormData({ ...exerciseFormData, time: e.target.value === 'on' });
+    setExerciseFormData({ ...exerciseFormData, time: e.target.checked });
   };
 
   const handleSubmit = e => {
@@ -128,7 +128,7 @@ const AddExercise = () => {
         </div>
 
         <div>
-          <input type='checkbox' id='time' name='time' onChange={handleTime} />
+          <input type='checkbox' id='time' name='time' onChange={handleTime} checked={exerciseFormData.time} />
           <label htmlFor='time'>Les reps sont une durée</label>
         </div>
 

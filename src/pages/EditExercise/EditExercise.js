@@ -34,7 +34,7 @@ const EditExercise = () => {
       reps: exercise.reps,
       set: exercise.set,
       summary: exercise.summary,
-      time: exercise.time,
+      time: exercise.time === true ? true : false,
       title: exercise.title,
     });
   }, [exercise]);
@@ -73,7 +73,7 @@ const EditExercise = () => {
   };
 
   const handleTime = e => {
-    setExerciseFormData({ ...exerciseFormData, time: e.target.value === 'on' });
+    setExerciseFormData({ ...exerciseFormData, time: e.target.checked });
   };
 
   const handleSubmit = e => {
